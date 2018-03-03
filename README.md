@@ -18,14 +18,5 @@ import getMoonNode from 'moon-nodes';
 getMoonNode('2018-03-03'); // asc
 
 getMoonNode('2018-03-15'); // desc
-  
-  
-getMoonNode('2014-01-01', { latitude: 42.885066, longitude: -94.349219 }); // asc
-
-getMoonNode('2020-01-01', { latitude: 42.885066, longitude: -94.349219 }); // desc
-
-getMoonNode('2014-01-01', { latitude: -17.883294, longitude: -48.294531 }); // desc
-
-getMoonNode('2020-01-01', { latitude: -17.883294, longitude: -48.294531 }); // asc
 
 ```
