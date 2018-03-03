@@ -1,0 +1,7 @@
+/src/
+.babelrc
+.eslintrc.js
+.gitignore
+.travis.yml
+yarn.lock
+/coverage/

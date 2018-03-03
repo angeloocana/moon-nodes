@@ -2,7 +2,7 @@
   "name": "moon-nodes",
   "version": "1.0.0",
   "description": "Calculate ascending and descending moon between 2001 and 2100.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "homepage": "https://github.com/angeloocana/moon-nodes#readme",
   "scripts": {
     "test": "eslint --fix ./src/ && jest && codecov",
