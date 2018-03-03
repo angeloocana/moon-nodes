@@ -1,18 +1,31 @@
 {
   "name": "moon-nodes",
   "version": "1.0.0",
-  "description": "",
+  "description": "Calculate ascending and descending moon between 2001 and 2100.",
   "main": "src/index.js",
+  "homepage": "https://github.com/angeloocana/moon-nodes#readme",
   "scripts": {
-    "test": "eslint --fix ./src/ && jest && codecov"
+    "test": "eslint --fix ./src/ && jest && codecov",
+    "build": "npx babel ./src/index.js --out-file ./dist/index.js && cp ./src/years.json ./dist/years.json"
   },
   "author": "angeloocana.com",
   "license": "MIT",
+  "respository": {
+    "type": "git",
+    "url": "https://github.com/angeloocana/moon-nodes"
+  },
+  "keywords": [
+    "descending",
+    "ascending",
+    "lunar",
+    "moon"
+  ],
   "dependencies": {
     "moment": "^2.21.0",
     "ramda": "^0.25.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
     "babel-preset-env": "^1.6.1",
