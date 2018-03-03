@@ -24,25 +24,3 @@ test('Should return Ascending or Descending by date', () => {
 
   expect(expectedDates).toEqual(dates);
 });
-
-test('Invert asc or desc when south position', () => {
-  expect(getMoonNode('2014-01-01', {
-    latitude: 42.885066,
-    longitude: -94.349219
-  })).toEqual('asc');
-
-  expect(getMoonNode('2020-01-01', {
-    latitude: 42.885066,
-    longitude: -94.349219
-  })).toEqual('desc');
-
-  expect(getMoonNode('2014-01-01', {
-    latitude: -17.883294,
-    longitude: -48.294531
-  })).toEqual('desc');
-  
-  expect(getMoonNode('2020-01-01', {
-    latitude: -17.883294,
-    longitude: -48.294531
-  })).toEqual('asc');
-});

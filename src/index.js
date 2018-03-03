@@ -53,15 +53,4 @@ const getMoonNode = yearsMap => (rawDate) => {
   }, null);
 };
 
-
-const _getMoonNode = getMoonNode(getYearsMap(rawYears));
-
-export default (date, position) => {
-  const node = _getMoonNode(date);
-
-  if(R.path(['latitude'], position) < 0){
-    return node === 'asc' ? 'desc' : 'asc';
-  }
-
-  return node;
-};
+export default getMoonNode(getYearsMap(rawYears));
