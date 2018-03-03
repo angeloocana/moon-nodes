@@ -23,7 +23,7 @@ const getYearsMap = oldYears => R.reduce((years, year) => {
   });
 }, {}, R.keys(oldYears));
 
-const getMoonNode = yearsMap => rawDate => {
+const getMoonNode = yearsMap => (rawDate) => {
   const date = moment(rawDate);
   const lines = yearsMap[date.year()];
 
@@ -53,4 +53,15 @@ const getMoonNode = yearsMap => rawDate => {
   }, null);
 };
 
-export default getMoonNode(getYearsMap(rawYears));
+
+const _getMoonNode = getMoonNode(getYearsMap(rawYears));
+
+export default (date, position) => {
+  const node = _getMoonNode(date);
+
+  if(R.path(['latitude'], position) < 0){
+    return node === 'asc' ? 'desc' : 'asc';
+  }
+
+  return node;
+};
