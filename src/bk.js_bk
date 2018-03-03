@@ -79,7 +79,7 @@ const getCycle = years => rawDate => {
 
 const getDateToAdd = (date, rawDate) => 
     date.isValid() && !isEmpty(rawDate)
-        ? date.format('YYYYMMDDHHmm')
+        ? date.format('MMDDHHmm')
         : null;
 
 fs.readFile('moonnodes.txt', 'utf8', (err, contents) => {
@@ -130,11 +130,11 @@ fs.readFile('moonnodes.txt', 'utf8', (err, contents) => {
         log('reduce: '),
     )(contents);
 
-    const get = getCycle(years);
+    const _getCycle = getCycle(years);
 
     jsonfile.writeFile('years.json', years, console.error)
 
-    const test = date => console.log(date, ' - ', get(date));
+    const test = date => console.log(date, ' - ', getCycle(date));
 
     test('2001-05-12');
     test('2001-05-27');

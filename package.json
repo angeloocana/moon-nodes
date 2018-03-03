@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "eslint --fix ./src/ && jest"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,16 @@
     "ramda": "^0.25.0"
   },
   "devDependencies": {
-    "jsonfile": "^4.0.0"
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2",
+    "jsonfile": "^4.0.0",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["lcov"]
   }
 }
