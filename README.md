@@ -7,7 +7,7 @@
 [![bitHound Code](https://www.bithound.io/github/angeloocana/moon-nodes/badges/code.svg)](https://www.bithound.io/github/angeloocana/moon-nodes)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-Calculate ascending and descending moon between 2001 and 2030.
+Calculate ascending and descending moon between 2001 and 2100.
 
 Data from: http://astropixels.com/ephemeris/moon/moonnodes2001.html
 
