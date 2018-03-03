@@ -4,7 +4,10 @@ import moment from 'moment';
 
 /* eslint-disable no-console */
 
-const getDate = year => date => moment(year + date, 'YYYYMMDDHHmm');
+const getDate = year => date =>
+  date === null
+    ? null
+    : moment(year + date, 'YYYYMMDDHHmm');
 
 /**
  * Create map to search from rawYears data
@@ -38,18 +41,15 @@ const getMoonNode = yearsMap => rawDate => {
         return 'asc';
       }
 
-      const nextAsc = R.path([lineIndex + 1, 1], lines);
+      const nextAsc = R.path([lineIndex + 1, 0], lines);
 
       if (date < nextAsc) {
         return 'desc';
       }
+    } else if (lineIndex === 0) {
+      return 'desc';
     }
 
-    if (desc === null || lineIndex === 0) {
-      return 'asc';
-    }
-
-    return cycle;
   }, null);
 };
 

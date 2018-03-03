@@ -3,13 +3,6 @@ import R from 'ramda';
 import moment from 'moment';
 import jsonfile from 'jsonfile';
 
-/* eslint-disable no-console */
-
-const log = a => b => { // eslint-disable-line no-unused-vars
-  console.log(a, b);
-  return b;
-};
-
 const getDate = (year, date) =>
   moment(year + ' ' + date, 'YYYY MMM DD  HH:mm');
 
@@ -51,8 +44,7 @@ const years = R.pipe(
       lastYear,
     });
   }, { lines: [] }),
-  R.omit(['lines', 'lastYear'])
-  // log('reduce: '),
+  R.omit(['lines', 'lastYear', 'undefined'])
 )(contents);
 
 jsonfile.writeFileSync(__dirname + '/years.json', years);
