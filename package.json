@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "eslint --fix ./src/ && jest"
+    "test": "eslint --fix ./src/ && jest && codecov"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
     "babel-preset-env": "^1.6.1",
+    "codecov": "^3.0.0",
     "eslint": "^4.18.2",
     "jest": "^22.4.2",
     "jsonfile": "^4.0.0",
@@ -23,6 +24,8 @@
   },
   "jest": {
     "collectCoverage": true,
-    "coverageReporters": ["lcov"]
+    "coverageReporters": [
+      "lcov"
+    ]
   }
 }
