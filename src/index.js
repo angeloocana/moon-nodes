@@ -12,20 +12,15 @@ const getDate = year => date =>
 /**
  * Create map to search from rawYears data
  */
-const getYearsMap = oldYears => R.reduce((years, year) => {
+const getYear = oldYears => year => {
   const _getDate = getDate(year);
-
-  const cycles = oldYears[year].map(
+  return oldYears[year].map(
     ([a, d]) => [_getDate(a), _getDate(d)]);
+};
 
-  return R.merge(years, {
-    [year]: cycles
-  });
-}, {}, R.keys(oldYears));
-
-const getMoonNode = yearsMap => (rawDate) => {
+const getMoonNode = getYear => (rawDate) => {
   const date = moment(rawDate);
-  const lines = yearsMap[date.year()];
+  const lines = getYear(date.year());
 
   return lines.reduce((cycle, line) => {
     const [asc, desc] = line;
@@ -53,4 +48,4 @@ const getMoonNode = yearsMap => (rawDate) => {
   }, null);
 };
 
-export default getMoonNode(getYearsMap(rawYears));
+export default getMoonNode(R.memoize(getYear(rawYears)));
